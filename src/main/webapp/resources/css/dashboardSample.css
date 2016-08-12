@@ -1,0 +1,142 @@
+#main{
+	
+	padding: 0;
+	margin: 9px 9px 0 9px;
+	text-align: left;
+	align: center;
+	width: 100%;
+	height:100vh;
+	background:linear-gradient(white, #8b9dc3);
+	font-size: 12px;
+	position: center;
+	overflow: auto;; 
+	
+	
+}
+ label{
+
+	color: #666;
+    font-weight: bold;
+    vertical-align: left;
+    font-family: "Lucida Sans", sans-serif; 
+    font-size: 100%;
+    display:block; width:x; height:y; text-align:right;
+   
+}
+#table4 tr label{
+	 display:block; width:x; height:y; text-align:center;
+}
+#table3 tr label{
+	 display:block; width:x; height:y; text-align:center;
+}
+  #table5 th label {
+	 display:block; width:x; height:y; text-align:center;
+} 
+ 
+#table-scroll {
+  overflow-x:scroll;  
+}
+
+#mainTable  {
+  padding-top: 0.5cm; 
+  align:center;
+    
+}
+
+#table3  {
+  padding-top: 0cm;
+  }
+
+
+
+input[type=submit] {
+     margin: 10px -80px; 
+    position:relative;
+    left:61%;
+    background: #3498DB;
+	text-shadow:#C17C3A 0 -1px 0;
+	width:70px;
+	height:20px;
+	text-align: center;
+	border:1px solid transparent;
+	font-weight: bold;
+	font-family: "Lucida Grande", Geneva, Verdana, Arial, Helvetica, sans-serif;
+  	color: white; 
+}
+
+input[type=button] {
+     margin: 10px -80px; 
+    position:relative;
+    left:61%;
+    background: #3498DB;
+	text-shadow:#C17C3A 0 -1px 0;
+	width:70px;
+	height:20px;
+	text-align: center;
+	border:1px solid transparent;
+	font-weight: bold;
+	font-family: "Lucida Grande", Geneva, Verdana, Arial, Helvetica, sans-serif;
+  	color: white; 
+  	white-space:nowrap;
+  	 word-wrap: break-word;
+  	 
+}
+
+
+
+
+#environmentSelect{
+	  font-family: "Lucida Sans", sans-serif;
+	
+}
+.ex1{
+	overflow-y: hidden; 
+	/*
+	background:#DCDCDC
+	background:#C0C0C0
+	background:#808080
+	background:#F0F8FF
+	*/
+	background:#D3D3D3
+	
+}
+
+select{
+    vertical-align: middle;
+    text-align: center;
+    font-family: "Lucida Sans", sans-serif; 
+    font-size: 100%;
+	
+}
+
+#dataTableDiv{
+	
+	margin-left:60px;
+	hight:500px;
+	width:380px;
+	overflow:auto; 
+	position: center;
+}
+
+.deleteTableDiv{
+	margin-left:60px;
+	hight:500px;
+	width:380px;
+	overflow:auto; 
+	position: center;
+	
+}
+
+#table3Div{
+	margin-left:60px;
+	position: left;
+}
+
+#table2Div{
+	margin-left:-20px ;
+	position: left;
+}
+
+#btnsDiv{
+	margin-left:60px;
+}

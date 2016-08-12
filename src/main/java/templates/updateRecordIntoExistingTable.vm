@@ -1,0 +1,10 @@
+#foreach($recordObject in $!{recordObjectList})
+#foreach( $columnObject in $!{recordObject.columnObjectList} )
+UPDATE RT_FIELD_VALUES SET FIELD_VALUE='$!{columnObject.columnNewValue}' 
+	WHERE REF_TABLE_FIELD_ID IN 
+	(SELECT REF_TABLE_FIELD_ID FROM RT_TABLE_FIELD WHERE FIELD_ID IN 
+	(SELECT FIELD_ID FROM RT_FIELD_DOMAIN WHERE NAME='$!{columnObject.columnName}') 
+	AND REF_TABLE_ID IN (SELECT REF_TABLE_ID FROM RT_TABLE WHERE NAME='$ref_table_name')) 
+	AND FIELD_ROW_ID IN (SELECT FIELD_ROW_ID FROM RT_FIELD_VALUES WHERE FIELD_VALUE IN ('$!{columnObject.columnValue}'));
+#end
+#end

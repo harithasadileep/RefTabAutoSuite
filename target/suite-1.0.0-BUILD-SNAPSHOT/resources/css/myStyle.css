@@ -1,0 +1,10 @@
+#main {
+	background: #CCC;
+	padding: 5;
+	margin: 9px 9px 0 9px;
+	/* text-align: center; */
+	text-align: left;
+	align: center;
+	height: 100%;
+	width: 100%;
+}

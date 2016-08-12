@@ -1,0 +1,64 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ include file="Header.jsp"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page isELIgnored="false"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="resources/css/myStyle.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title></title>
+<script type="text/javascript">
+	function validateForm() {
+		var columnName = document.getElementById('columnName').value;
+		var columnDataType = document.getElementById('columnDataType').value;
+		var columnMaxLength = document.getElementById('columnMaxLength').value;
+		var nullsAllowed = document.getElementById('nullsAllowed').value;
+		if ('' == columnName || '' == columnDataType || '' == columnMaxLength
+				|| '' == nullsAllowed) {
+			alert('Please select form values...');
+			return false;
+		}
+	}
+</script>
+</head>
+<body>
+	<div id="main">
+	<form:form name="addNewColumnIntoTableForm" method="POST"
+		action="/suite/addNewColumnIntoTable" onsubmit="return validateForm()">
+		<table id="dataTable">
+			<tr>
+				<td><label> Column Name : </label></td>
+				<td><input type="text" name="columnName" id="columnName" /></td>
+			</tr>
+			<tr>
+				<td><label> Column Data Type : </label></td>
+				<td><input type="text" name="columnDataType"
+					id="columnDataType" /></td>
+			</tr>
+			<tr>
+				<td><label> Column Max Length : </label></td>
+				<td><input type="text" name="columnMaxLength"
+					id="columnMaxLength" /></td>
+			</tr>
+			<tr>
+				<td><label> Is Null allowed : </label></td>
+				<td><input type="text" name="nullsAllowed" id="nullsAllowed" />
+				</td>
+			</tr>
+		</table>
+		<input type="submit" value="Add" />
+		<input type="button" value="Home"
+			onclick="window.location.href='/suite/dashboard'" />
+	</form:form>
+	</div>
+	<c:choose>
+		<c:when test="${not empty path}">
+			<p style="color: green;">Script Generated at : ${path}</p>
+		</c:when>
+	</c:choose>
+</body>
+</html>
+<%@ include file="Footer.jsp"%>

@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ include file="Header.jsp"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title></title>
+</head>
+<body>
+	<form:form name="insertRecordIntoTableForm" method="POST" action="/suite/insertRecordIntoTable">
+		<table id="dataTable">
+			<tr>
+				<th> Table Name : </th>
+				<th> ${tableName} </th>
+			</tr>
+			<c:forEach items="${columnList}" var="columnName">
+			<tr>
+				<td>${columnName}</td>
+				<td><input type="text" name="${columnName}" id="${columnName}" /></td>
+			</tr>
+			</c:forEach>
+		</table>
+		<input type="submit" value="Insert"/>
+		<input type="button" value="Back" onclick="window.location.href='/suite/dashboard'" /> 
+	</form:form>
+	<c:choose>
+		<c:when test="${not empty path}">
+			<p style="color:green;">Script Generated at : ${path}</p>
+		</c:when>
+	</c:choose>
+</body>
+</html>
+<%@ include file="Footer.jsp"%>
